@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  background: #000;
+  font-family: sans-serif;
+}
+
+header {
+  padding: 40px 5px;
+}
+
+header .logo {
+  float: left;
+}
+header .logo img {
+  height: 75px;
+  width: 250px;
+  margin-top: -30px;
+}
+header header .menu {
+  float: right;
+}
+header .menu ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+header .menu ul li:last-child {
+  margin-right: 0;
+}
+header .menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all ease 0.6s;
+}
+header .menu ul li a:hover {
+  color: #fff700;
+  transition: all ease 0.5s;
+}
+
+/*Header Button*/
+header .menu ul li.btn a {
+  background-color: #fff700;
+  color: #000;
+  padding: 14px 27px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+header .menu ul li.btn a:hover {
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Container */
+.home .container {
+  max-width: 1266px;
+  margin: 0 auto;
+}
+
+/* Person Image */
+.home .person {
+  float: right;
+  margin: 70px 180px 0;
+  position: relative;
+
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+  bottom: 50px;
+}
+.home .person img {
+  filter: brightness(1.5);
+}
+.home .person-overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #525252;
+}
+
+/* Person Text */
+.home-text {
+  color: #fff;
+  margin-top: 220px;
+  position: absolute;
+}
+.home-text h6 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+.home-text h1 {
+  text-transform: uppercase;
+  font-size: 100px;
+}
+.home-text p {
+  max-width: 500px;
+  font-size: 16px;
+  margin-top: 230px;
+}
+
+.home-text .name span {
+  margin-right: 130px;
+  display: inline-block;
+}
+.home-text .name span:last-child {
+  margin-right: 0;
+}
+/* Social Media Buttons */
+.socials-wrapper {
+  display: grid;
+  margin-left: -200px;
+  margin-top: 150px;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  float: left;
+  padding: 10px 50px;
+}
+.socials .button {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  overflow: hidden;
+  margin: 0 5px;
+  background: linear-gradient(315deg, #ffffff 0%, #4a4b4d 74%);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+}
+.socials .button:hover {
+  width: 200px;
+}
+.socials .button .icon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+}
+.socials .button:nth-child(1):hover .icon {
+  background: #0e1f56;
+}
+.socials .button:nth-child(2):hover .icon {
+  background: #55acee;
+}
+.socials .button:nth-child(3):hover .icon {
+  background: #e52d27;
+}
+.socials .button:nth-child(4):hover .icon {
+  background: #0072b1;
+}
+.socials .button .icon i {
+  font-size: 25px;
+  line-height: 60px;
+}
+
+/* Default State Hide */
+.home .person img,
+.job span,
+.name span,
+.logo,
+.menu li,
+.socials span,
+.socials-wrapper {
+  opacity: 0;
+}
+/* Hide Hamburger */
+#hamnav label,
+#hamburger,
+#hamitems {
+  display: none;
+}
+#hamnav {
+  width: 100%;
+  background: #000;
+  position: sticky;
+  top: 0;
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  #hamnav label,
+  #hamburger {
+    display: inline-block;
+    color: white;
+    background: #a02620;
+    font-style: normal;
+    font-size: 1.3em;
+    padding: 10px;
+    z-index: 10;
+  }
+  #hamburger {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  #hamitems {
+    display: flex;
+  }
+  #hamitems a {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background: #a02620;
+    border-top: 1px solid rgb(255, 0, 0);
+  }
+
+  /* Toggle hamborger */
+  #hamitems {
+    display: none;
+  }
+}
+#hamnav input:checked ~ #hamitems && #hamnav label && #hamburger && #hamitems {
+  display: inline-block;
+  z-index: 10;
+}

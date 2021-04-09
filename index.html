@@ -19,6 +19,22 @@
   </head>
   <body>
     <div class="wrapper">
+      <!-- Hamboger -->
+
+      <nav class="hamnav">
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+
+        <!-- Menu Items -->
+        <div id="hamitems">
+          <a href="#">My Life </a>
+          <a href="#">My Project </a>
+          <a href="#">My Goal</a>
+          <a href="#">Photos</a>
+          <a href="#">Videos</a>
+          <a href="#">Contact me</a>
+        </div>
+      </nav>
       <header>
         <div class="logo">
           <img src="logo.png" alt="" />
@@ -67,7 +83,13 @@
         </div>
       </div>
     </div>
-
+    <script>
+      document.getElementById("hamburger").onclick = function () {
+        document.getElementById("hamlabel").innerHTML = this.checked
+          ? "X"
+          : "&#9776;";
+      };
+    </script>
     <script>
       $(document).ready(function () {
         $(".name, .job, .small-intro").lettering();
